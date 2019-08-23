@@ -10,6 +10,7 @@ terraform {
 resource "aws_s3_bucket" "auden_bucket" {
   bucket = "auden-octopus-frontend-bucket-${var.release}"
   acl    = "public-read"
+  force_destroy = true
   tags = {
     Name = "Auden Bucket"
   }
