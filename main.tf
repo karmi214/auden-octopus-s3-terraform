@@ -1,14 +1,12 @@
 provider "aws" {
-  profile="default"
-  region="us-east-1"
 }
-# terraform {
-#   backend "s3" {
-#     bucket = "auden-octopus-terraform-releasetour"
-#     key    = "s3.tfstate"
-#     region = "us-east-1"
-#   }
-# }
+terraform {
+  backend "s3" {
+    bucket = "auden-octopus-terraform-releasetour"
+    key    = "s3.cloudfront.tfstate"
+    region = "us-east-1"
+  }
+}
 resource "aws_s3_bucket" "auden_bucket" {
   bucket = "auden-octopus-frontend-bucket-${var.release}"
   acl    = "public-read"
