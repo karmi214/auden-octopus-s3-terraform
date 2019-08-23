@@ -1,2 +1,2 @@
-variable "bucket_name" {
+variable "release" {
 }
